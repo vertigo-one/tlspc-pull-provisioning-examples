@@ -21,10 +21,10 @@ RUN apt-get update \
         python3-pymssql \
         sshpass \
         unzip \
+        nginx \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 
-RUN apt-get install -y nginx
 
 RUN pip install --upgrade pip \
     && pip install $pip_packages \
