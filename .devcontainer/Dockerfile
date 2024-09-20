@@ -13,6 +13,7 @@ RUN apt-get update \
         python3-pip \
         unzip \
         nginx \
+        bash \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 
@@ -20,3 +21,4 @@ RUN apt-get update \
 RUN pip install --upgrade pip \
     && pip install $pip_packages \
     && pip install ansible
+CMD bash
