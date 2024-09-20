@@ -1,6 +1,6 @@
 FROM ubuntu:jammy
 ENV DEBIAN_FRONTEND noninteractive
- 
+ENV LANG C.UTF-8
 ENV pip_packages "ansible cryptography"
  
 RUN apt-get update \
