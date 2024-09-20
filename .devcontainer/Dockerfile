@@ -20,6 +20,5 @@ RUN apt-get update \
 RUN pip install --upgrade pip \
     && pip install $pip_packages \
     && pip install ansible \
-    && ansible-galaxy collection install azure.azcollection community.general \
  
-CMD    ["/bin/bash"]
+CMD ["/bin/bash"]
