@@ -24,13 +24,11 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 
-RUN apt-get install nginx
+RUN apt-get install -y nginx
 
 RUN pip install --upgrade pip \
     && pip install $pip_packages \
     && pip install ansible \
     && ansible-galaxy collection install azure.azcollection community.general \
  
-RUN 
-
 CMD    ["/bin/bash"]
