@@ -20,5 +20,5 @@ RUN apt-get update \
 RUN pip install --upgrade pip \
     && pip install $pip_packages \
     && pip install ansible \
- 
-CMD ["/bin/sh", "-c", "bash"]
+
+#CMD ["/bin/sh", "-c", "bash"]
