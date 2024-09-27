@@ -18,8 +18,7 @@ RUN apt-get update \
         php8.1-fpm \
         php8.1-curl \
         nano \
-        openssl
-
+        openssl \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 
