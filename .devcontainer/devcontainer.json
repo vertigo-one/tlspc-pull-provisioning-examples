@@ -13,7 +13,7 @@
 	"forwardPorts": [443],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "chmod 755 common/*.sh"
+	"postCreateCommand": "service nginx start && service php8.1-fpm start"
 
 	// Configure tool-specific properties.
 	// "customizations": {},

@@ -37,7 +37,6 @@ COPY default /etc/nginx/sites-enabled/default
 COPY default /etc/nginx/sites-avaliable/default
 COPY nginx-ssl.conf /etc/nginx/snippets/nginx-ssl.conf
 
-RUN service nginx start \ 
-    && service php8.1-fpm start
+RUN chmod 775 common/*.sh
 
 CMD bash
