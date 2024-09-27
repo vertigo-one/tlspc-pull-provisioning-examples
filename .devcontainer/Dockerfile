@@ -31,12 +31,11 @@ RUN pip install --upgrade pip \
 RUN openssl req -x509 -newkey rsa:4096 -keyout /etc/ssl/private/cert.key -out /etc/ssl/certs/cert.crt -sha256 -days 365 -nodes -subj "/C=US/ST=MA/L=Boston/O=selfsigned/OU=selfsigned/CN=selfsigned"
 
 #Copy nginx and php configuration files
-COPY www.conf /etc/php/8.1/fpm/pool.d/www.conf 
-COPY index.php /var/www/html/index.php
-COPY default /etc/nginx/sites-enabled/default
-COPY default /etc/nginx/sites-avaliable/default
-COPY nginx-ssl.conf /etc/nginx/snippets/nginx-ssl.conf
 
-RUN chmod 775 common/*.sh
+COPY www.conf /etc/php/8.1/fpm/pool.d/www.conf 
+COPY index.php /var/www/html/index.php 
+COPY default /etc/nginx/sites-enabled/default 
+COPY default /etc/nginx/sites-avaliable/default 
+COPY nginx-ssl.conf /etc/nginx/snippets/nginx-ssl.conf 
 
 CMD bash
