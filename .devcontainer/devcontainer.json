@@ -2,7 +2,7 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
 	//"name": "Vcert Devcontainer",
-    "build": { "dockerfile": "Dockerfile" }
+    "build": { "dockerfile": "Dockerfile" },
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	//"image": "httpd",
 
@@ -10,10 +10,10 @@
 	//"features": {},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	//"forwardPorts": [80,443],
+	"forwardPorts": [443],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	//"postCreateCommand": "chmod 755 common/*.sh"
+	"postCreateCommand": "chmod 755 common/*.sh"
 
 	// Configure tool-specific properties.
 	// "customizations": {},
