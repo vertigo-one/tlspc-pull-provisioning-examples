@@ -2,7 +2,7 @@
 
 This repository provides a demo lab for pull provisioning of TLS certificates from the Venafi TLS Protect Cloud using the Venafi Ansible collection and nginx + php. 
 
-**Ansible** and the **venafi.machine_identity** collections have already been isntalled on this machine, as have some other tools if you wish to fiddle after completing the lab. 
+**Ansible** and the **venafi.machine_identity** collections have already been installed on this machine, as have some other tools if you wish to fiddle after completing the lab. 
 
 
 ## Lab Prerequisites.
@@ -15,8 +15,9 @@ This repository provides a demo lab for pull provisioning of TLS certificates fr
 
 ## Lab Steps
 
-**Part 1: Venafi Onetime setup**
-1) Create your own private codespace from this repository by clicking **Code** dropdown button -> **Codespaces** -> **Create Codespace on main**. This will take 2-5 minutes to create.
+**Part 1: Control Plane Onetime setup**
+1) Create your own private codespace from this repository by clicking **Code** dropdown button -> **Codespaces** -> **Create Codespace on main**. This will take 2-5 minutes to create.  
+       <img src="images/create_codespace.png" alt="Create Codespace" width="25%"/>
     - Once it is done creating, a popup in the lower right of this tab will occur. Click **Open in Browser** to open a browser tab that displays the hosted webapp. 
         ![Open in Browser popup](images/open_in_browser_popup.png)
     - Copy pasting into this environment is possible if the browser promt is accepted when you firt try to copy paste.
