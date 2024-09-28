@@ -15,7 +15,8 @@
 		"443": {
 			"label": "443-myapp",
 			"onAutoForward": "notify",
-			"protocol":"http"
+			"protocol":"http",
+			"onAutofForward":"openPreview"
 		}
 	},
 

@@ -39,5 +39,7 @@ COPY index.php /var/www/html/index.php
 COPY default /etc/nginx/sites-enabled/default 
 COPY default /etc/nginx/sites-avaliable/default 
 COPY nginx-ssl.conf /etc/nginx/snippets/nginx-ssl.conf 
+COPY startservices.sh /usr/local/bin/startservices
+RUN chmod +x /usr/local/bin/startservices
 
 CMD bash
