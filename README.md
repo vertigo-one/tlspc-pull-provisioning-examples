@@ -18,9 +18,9 @@ This repository provides a demo lab for pull provisioning of TLS certificates fr
 **Part 1: Control Plane Onetime setup**
 1) Create your own private codespace from this repository by clicking **Code** dropdown button -> **Codespaces** -> **Create Codespace on main**. This will take 2-5 minutes to create.  
        <img src="images/create_codespace.png" alt="Create Codespace" width="50%"/>
-    - Once it is done creating, a popup in the lower right of this tab will occur. Click **Open in Browser** to open a browser tab that displays the hosted webapp. 
+    - Once your codespace is done creating, a popup in the lower right of this tab will occur. Click **Open in Browser** to open a browser tab that displays the hosted webapp. 
         ![Open in Browser popup](images/open_in_browser_popup.png)
-    - Copy pasting into this environment is possible if the browser promt is accepted when you firt try to copy paste.
+    - Copy pasting into this environment is possible if the browser promt is accepted when you first try to copy paste.
 2) Log into your Venafi Cloud trial tenant while your codespace is creating.
 3) Modify the preexisting issuing template with the name `Default` to have [Recommended Settings](https://docs.venafi.cloud/vaas/issuing-templates/defining-recommended-settings-for-an-issuing-template/) which include values for the below fields:
     - Organization (O)
@@ -33,13 +33,13 @@ This repository provides a demo lab for pull provisioning of TLS certificates fr
 &nbsp;
 
 **Part 2: TLS Certificate Automation Setup**
-1) Copy your TLSPC API key - [Obtaining your API key](https://docs.venafi.cloud/api/obtaining-api-key/#to-obtain-an-api-key-using-the-tls-protect-cloud-console)  
-2) In your browser tab for your codespace, open the credential.yml for editing using `nano credentials.yml` in the terminal.  
+1) Once your codespace is createcd, copy your TLSPC API key - [Obtaining your API key](https://docs.venafi.cloud/api/obtaining-api-key/#to-obtain-an-api-key-using-the-tls-protect-cloud-console)  
+2) In your browser tab for your codespace, open the `credential.yml` file for editing using `nano credentials.yml` in the terminal.  
 3) Change the value of the `token` field to your API key. Ensure that it is wrapped in single quotes.  
     - Example: `token: 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'`
 4) Change the value of the `zone` field to `"MIM Summit App\Default"`
     - Case sensitivity is important here. 
-    - If you named your TLSPC application something else, ensure the zone field fits this format: `<applicationname>\<issuingtemplatename>`
+    - If you named your TLSPC application something else, ensure the zone field fits this format: `<application name>\<issuing template API alias from application>`
 5) Use `CTRL + x` to close the file and then `y` to save your changes before fully closing.  
 6) Navigate to your browser tab that displays the codespace hosted webapp and look at the self-signed certificate that is bound to the site.
     - This certificate is displayed in the site page itself using openssl output for ease of viewing.
