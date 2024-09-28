@@ -11,6 +11,14 @@
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [443],
+	"portsAttributes": {
+		"443": {
+			"label": "443-myapp",
+			"onAutoForward": "notify",
+			"protocol":"http"
+		}
+	},
+
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "service nginx start && service php8.1-fpm start",

@@ -1,0 +1,33 @@
+---
+- name: Renew PHP site SSL Certificate using TLSPC
+  hosts: localhost
+  gather_facts: false
+
+  vars:
+    credentials_file: credentials.yml
+    codespacename: "{{ lookup('env', 'CODESPACE_NAME') }}"
+
+  roles:
+    - role: "venafi.machine_identity.certificate"
+
+      #renewal details
+      certificate_common_name: "{{ codespacename }}.github.dev"
+      certificate_alt_name: "DNS:{{ codespacename }}.github.dev,DNS:{{ codespacename }}.MIMsummit.dev"
+      certificate_before_expired_hours: 366
+
+      #placement on machine
+      certificate_cert_dir: "/etc/ssl"
+      certificate_cert_path: "{{ certificate_cert_dir }}/certs/cert.crt"
+      certificate_chain_path: "{{ certificate_cert_dir }}/{{ certificate_common_name }}.chain.pem"
+      #certificate_privatekey_passphrase: "P@55word!1234"
+      certificate_privatekey_type: "RSA"
+      certificate_privatekey_size: "2048"
+      certificate_privatekey_path: "{{ certificate_cert_dir }}/private/cert.key"
+      certificate_csr_path: "{{ certificate_cert_dir }}/{{ certificate_common_name }}.csr"
+      certificate_remote_execution: true
+
+  post_tasks:
+  - name: Restart Nginx to use cert
+    ansible.builtin.service:
+      name: nginx
+      state: restarted

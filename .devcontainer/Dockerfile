@@ -2,7 +2,7 @@
 FROM ubuntu:jammy
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
-ENV pip_packages "ansible cryptography"
+ENV pip_packages "vcert ansible cryptography"
  
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
@@ -26,6 +26,8 @@ RUN apt-get update \
 RUN pip install --upgrade pip \
     && pip install $pip_packages \
     && pip install ansible
+
+RUN ansible-galaxy collection install venafi.machine_identity
 
 #generate self signed cert     
 RUN openssl req -x509 -newkey rsa:4096 -keyout /etc/ssl/private/cert.key -out /etc/ssl/certs/cert.crt -sha256 -days 365 -nodes -subj "/C=US/ST=MA/L=Boston/O=selfsigned/OU=selfsigned/CN=selfsigned"
