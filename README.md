@@ -37,9 +37,10 @@ This repository provides a demo lab for pull provisioning of TLS certificates fr
 2) In your browser tab for your codespace, open the `credential.yml` file for editing using `nano credentials.yml` in the terminal.  
 3) Change the value of the `token` field to your API key. Ensure that it is wrapped in single quotes.  
     - Example: `token: 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'`
-4) Change the value of the `zone` field to `"MIM Summit App\Default"`
-    - Case sensitivity is important here. 
-    - If you named your TLSPC application something else, ensure the zone field fits this format: `<application name>\<issuing template API alias from application>`
+4) Change the value of the `zone` field to `'MIM Summit App\Default'`
+    - Case sensitivity is important here, As are single quotes.
+    - If you named your TLSPC application something else, ensure the zone field fits this format:   
+    `<application name>\<issuing template API alias from application>`
 5) Use `CTRL + x` to close the file and then `y` to save your changes before fully closing.  
 6) Navigate to your browser tab that displays the codespace hosted webapp and look at the self-signed certificate that is bound to the site.
     - This certificate is displayed in the site page itself using openssl output for ease of viewing.
